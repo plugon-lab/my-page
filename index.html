@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plug:ON — 브랜드 소개서</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #0a0a0f;
+    --surface:  #111118;
+    --surface2: #18181f;
+    --border:   rgba(255,255,255,0.07);
+    --green:    #4DFFA0;
+    --green-dim:rgba(77,255,160,0.10);
+    --green-mid:rgba(77,255,160,0.25);
+    --white:    #f0f0f8;
+    --muted:    #6b6b80;
+    --soft:     #9090a8;
+    --red-soft: #ff5c5c;
+
+    --font-en:   'Space Grotesk', sans-serif;
+    --font-kr:   'Paperlogy', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-kr);
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── SCROLL ANIMATION ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─────────────────────────────────────
+     SECTION 1 · HERO
+  ───────────────────────────────────── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 0 72px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(77,255,160,0.07) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    pointer-events: none;
+  }
+  .hero-glow2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(77,255,160,0.04) 0%, transparent 70%);
+    bottom: 80px; left: 200px;
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 120px;
+    max-width: 900px;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 44px;
+    opacity: 0.75;
+  }
+
+  .hero-logo {
+    font-family: var(--font-en);
+    font-size: clamp(72px, 11vw, 148px);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 0.92;
+    color: var(--white);
+  }
+  .hero-logo .colon { color: var(--green); }
+
+  .hero-divider {
+    width: 56px;
+    height: 2px;
+    background: var(--green);
+    margin: 40px 0;
+    opacity: 0.6;
+  }
+
+  .hero-copy {
+    font-family: var(--font-kr);
+    font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 400;
+    color: var(--soft);
+    line-height: 1.65;
+    max-width: 620px;
+    word-break: keep-all;
+  }
+  .hero-copy strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .hero-slogan-en {
+    font-family: var(--font-en);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    margin-top: 40px;
+  }
+  .hero-slogan-en span { color: var(--green); }
+
+  .hero-bottom {
+    padding: 36px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+  }
+  .hero-bottom-name {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+  }
+  .hero-bottom-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* ─────────────────────────────────────
+     SECTION 2 · THE PROBLEM
+  ───────────────────────────────────── */
+  .problem {
+    padding: 120px 72px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .sec-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.65;
+  }
+
+  .sec-title-en {
+    font-family: var(--font-en);
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .sec-title-kr {
+    font-family: var(--font-kr);
+    font-size: clamp(18px, 2.2vw, 26px);
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 64px;
+    word-break: keep-all;
+  }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+  }
+
+  .problem-card {
+    background: var(--surface);
+    padding: 44px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .problem-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--red-soft);
+    opacity: 0.4;
+  }
+
+  .problem-num {
+    font-family: var(--font-mono);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--red-soft);
+    opacity: 0.25;
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .problem-title {
+    font-family: var(--font-kr);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 14px;
+    word-break: keep-all;
+  }
+
+  .problem-desc {
+    font-size: 13.5px;
+    color: var(--soft);
+    line-height: 1.85;
+    word-break: keep-all;
+  }
+
+  .problem-arrow {
+    text-align: center;
+    padding: 64px 0 0;
+  }
+  .problem-arrow-line {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .problem-arrow-text {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--green);
+    text-transform: uppercase;
+  }
+  .problem-arrow-icon {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--green), transparent);
+  }
+
+  /* ─────────────────────────────────────
+     SECTION 3 · WHAT PLUG:ON DOES
+  ───────────────────────────────────── */
+  .solution {
+    padding: 120px 72px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .solution-intro {
+    max-width: 680px;
+    margin-bottom: 72px;
+  }
+
+  .solution-intro p {
+    font-size: 17px;
+    color: var(--soft);
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+  .solution-intro p strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  .three-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-bottom: 64px;
+  }
+
+  .step-card {
+    background: var(--surface);
+    padding: 48px 40px;
+    position: relative;
+  }
+  .step-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: var(--green);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .step-card:hover::before { opacity: 1; }
+
+  .step-index {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0.6;
+  }
+
+  .step-kr {
+    font-family: var(--font-kr);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .step-en {
+    font-family: var(--font-en);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--green);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+
+  .step-desc {
+    font-size: 13.5px;
+    color: var(--soft);
+    line-height: 1.85;
+    word-break: keep-all;
+  }
+
+  /* promise block */
+  .promise-block {
+    background: var(--green-dim);
+    border: 1px solid var(--green-mid);
+    padding: 52px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+  .promise-block::after {
+    content: '✦';
+    position: absolute;
+    right: 52px; top: 40px;
+    font-size: 32px;
+    color: var(--green);
+    opacity: 0.2;
+  }
+  .promise-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.7;
+  }
+  .promise-text {
+    font-family: var(--font-kr);
+    font-size: clamp(18px, 2.4vw, 26px);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.65;
+    max-width: 680px;
+    word-break: keep-all;
+  }
+  .promise-text em {
+    color: var(--green);
+    font-style: normal;
+  }
+
+  /* ─────────────────────────────────────
+     SECTION 4 · FOR WHOM
+  ───────────────────────────────────── */
+  .audience {
+    padding: 120px 72px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 64px;
+  }
+
+  .audience-card {
+    background: var(--surface);
+    padding: 52px 48px;
+  }
+
+  .audience-card-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--green-mid);
+    color: var(--green);
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 28px;
+    opacity: 0.8;
+  }
+
+  .audience-card-title {
+    font-family: var(--font-kr);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    word-break: keep-all;
+  }
+
+  .audience-card-sub {
+    font-family: var(--font-kr);
+    font-size: 13px;
+    color: var(--green);
+    margin-bottom: 28px;
+    font-weight: 400;
+    opacity: 0.8;
+    word-break: keep-all;
+  }
+
+  .audience-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .audience-list li {
+    font-size: 13.5px;
+    color: var(--soft);
+    padding-left: 18px;
+    position: relative;
+    line-height: 1.75;
+    word-break: keep-all;
+  }
+  .audience-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    opacity: 0.5;
+  }
+
+  /* ─────────────────────────────────────
+     SECTION 5 · CURRICULUM PREVIEW
+  ───────────────────────────────────── */
+  .curriculum {
+    padding: 120px 72px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .curriculum-intro {
+    max-width: 600px;
+    margin-bottom: 72px;
+  }
+  .curriculum-intro p {
+    font-size: 15px;
+    color: var(--soft);
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+
+  .module-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .module-row {
+    background: var(--surface);
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: center;
+    gap: 32px;
+    transition: background 0.2s;
+  }
+  .module-row:hover { background: var(--surface2); }
+
+  .module-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--green);
+    opacity: 0.5;
+    letter-spacing: 0.08em;
+  }
+
+  .module-info {}
+  .module-title {
+    font-family: var(--font-kr);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    word-break: keep-all;
+  }
+  .module-sub {
+    font-size: 12.5px;
+    color: var(--muted);
+    word-break: keep-all;
+  }
+
+  .module-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .module-tag.theory {
+    background: rgba(77,255,160,0.08);
+    color: var(--green);
+    border: 1px solid rgba(77,255,160,0.2);
+  }
+  .module-tag.practice {
+    background: rgba(255,255,255,0.04);
+    color: var(--soft);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .curriculum-note {
+    margin-top: 40px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    line-height: 1.8;
+  }
+
+  /* ─────────────────────────────────────
+     SECTION 6 · CLOSING CTA
+  ───────────────────────────────────── */
+  .closing {
+    padding: 140px 72px 120px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .closing-glow {
+    position: absolute;
+    width: 700px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(77,255,160,0.06) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .closing-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    color: var(--green);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+    opacity: 0.65;
+  }
+
+  .closing-title {
+    font-family: var(--font-kr);
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 28px;
+    word-break: keep-all;
+    position: relative;
+    z-index: 1;
+  }
+  .closing-title em {
+    color: var(--green);
+    font-style: normal;
+  }
+
+  .closing-sub {
+    font-size: 15px;
+    color: var(--soft);
+    max-width: 500px;
+    margin: 0 auto 56px;
+    line-height: 1.85;
+    word-break: keep-all;
+  }
+
+  .closing-slogan {
+    font-family: var(--font-en);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+    position: relative;
+    z-index: 1;
+  }
+  .closing-slogan span { color: var(--green); }
+
+  /* ─────────────────────────────────────
+     FOOTER
+  ───────────────────────────────────── */
+  .footer {
+    padding: 40px 72px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-logo {
+    font-family: var(--font-en);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--white);
+  }
+  .footer-logo span { color: var(--green); }
+  .footer-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    text-align: right;
+    line-height: 1.8;
+  }
+</style>
+</head>
+<body>
+
+<!-- ── SECTION 1 · HERO ── -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-inner">
+    <p class="hero-eyebrow reveal">Brand Introduction · 브랜드 소개서</p>
+    <h1 class="hero-logo reveal reveal-delay-1">Plug<span class="colon">:</span>ON</h1>
+    <div class="hero-divider reveal reveal-delay-2"></div>
+    <p class="hero-copy reveal reveal-delay-2">
+      AI 시대, 모두가 도구를 갖췄습니다.<br>
+      하지만 <strong>실무에 연결하는 사람</strong>은 많지 않습니다.<br>
+      Plug:ON은 그 연결의 순간을 만드는 브랜드입니다.
+    </p>
+    <p class="hero-slogan-en reveal reveal-delay-3"><span>Plug in.</span> Power on.</p>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-bottom-name">공지연 · Gong Ji-yeon · AI Literacy Instructor</p>
+    <p class="hero-bottom-tag">plugon.kr</p>
+  </div>
+</section>
+
+<!-- ── SECTION 2 · THE PROBLEM ── -->
+<section class="problem">
+  <p class="sec-label reveal">01 · The Problem</p>
+  <h2 class="sec-title-en reveal reveal-delay-1">Why AI training<br>doesn't work.</h2>
+  <p class="sec-title-kr reveal reveal-delay-2">왜 AI 교육은 현장에서 작동하지 않는가</p>
+
+  <div class="problem-grid">
+    <div class="problem-card reveal reveal-delay-1">
+      <p class="problem-num">01</p>
+      <h3 class="problem-title">배움이 현장에서 멈춘다</h3>
+      <p class="problem-desc">강의실에서 배운 AI는 퇴근 후 잊힌다. '어떻게 쓰는지'는 알았지만, '내 업무에 어떻게 쓰는지'는 여전히 모른다. 추상적 지식은 실무 앞에서 작동하지 않는다.</p>
+    </div>
+    <div class="problem-card reveal reveal-delay-2">
+      <p class="problem-num">02</p>
+      <h3 class="problem-title">도구는 있는데 회로가 없다</h3>
+      <p class="problem-desc">ChatGPT, Claude, Gemini — 계정은 있다. 하지만 어떤 순간에 어떤 도구를, 어떻게 써야 하는지 회로가 없다. 갖고 있어도 켜지지 않는 플러그와 같다.</p>
+    </div>
+    <div class="problem-card reveal reveal-delay-3">
+      <p class="problem-num">03</p>
+      <h3 class="problem-title">교육이 끝나면 혼자다</h3>
+      <p class="problem-desc">대부분의 AI 교육은 1회성으로 끝난다. 현업에서 실제로 써보려는 순간, 돕는 사람이 없다. 강의는 끝났지만 실행은 아직 시작되지 않았다.</p>
+    </div>
+  </div>
+
+  <div class="problem-arrow reveal">
+    <div class="problem-arrow-line">
+      <p class="problem-arrow-text">Plug:ON의 답</p>
+      <div class="problem-arrow-icon"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 3 · SOLUTION ── -->
+<section class="solution">
+  <p class="sec-label reveal">02 · Our Answer</p>
+  <h2 class="sec-title-en reveal reveal-delay-1">Connect.<br>Don't just teach.</h2>
+  <p class="sec-title-kr reveal reveal-delay-2">가르치는 것이 아닌, 연결하는 것</p>
+
+  <div class="solution-intro reveal reveal-delay-2">
+    <p>Plug:ON은 AI 도구와 실무 사이의 <strong>단절을 연결</strong>합니다. 단순히 기능을 설명하는 것이 아니라, 수강생 각자의 업무 맥락에 AI를 꽂아 실제로 작동시키는 경험을 설계합니다. 강의가 끝난 후에도 혼자 실행할 수 있는 힘을 남기는 것, 그것이 Plug:ON의 방식입니다.</p>
+  </div>
+
+  <div class="three-steps">
+    <div class="step-card reveal reveal-delay-1">
+      <p class="step-index">Step 01</p>
+      <p class="step-kr">배우고.</p>
+      <p class="step-en">Learn</p>
+      <p class="step-desc">AI 도구의 원리와 특성을 이해한다. 단순 기능 암기가 아니라, 왜 이렇게 쓰는지 — 구조를 먼저 잡는다. 이해가 있어야 응용이 생긴다.</p>
+    </div>
+    <div class="step-card reveal reveal-delay-2">
+      <p class="step-index">Step 02</p>
+      <p class="step-kr">연결하고.</p>
+      <p class="step-en">Connect</p>
+      <p class="step-desc">내 업무와 AI를 연결하는 회로를 만든다. 보고서, 이메일, 데이터 분석, 기획안 — 각자의 실무에 AI를 직접 꽂아보는 시간을 갖는다.</p>
+    </div>
+    <div class="step-card reveal reveal-delay-3">
+      <p class="step-index">Step 03</p>
+      <p class="step-kr">실행한다.</p>
+      <p class="step-en">Execute</p>
+      <p class="step-desc">강의 현장에서 직접 만들고 완성한다. 퇴근 전에 쓸 수 있는 결과물을 들고 나가는 것. 실행이 완료되어야 교육이 완료된 것이다.</p>
+    </div>
+  </div>
+
+  <div class="promise-block reveal">
+    <p class="promise-label">Plug:ON Promise</p>
+    <p class="promise-text">
+      Plug:ON과 만난 모든 수강생은<br>
+      강의가 끝난 후에도 <em>혼자 실행할 수 있는 사람</em>이 되어 돌아갑니다.<br>
+      이것은 교육이 아니라 <em>스위치를 켜는 행위</em>입니다.
+    </p>
+  </div>
+</section>
+
+<!-- ── SECTION 4 · FOR WHOM ── -->
+<section class="audience">
+  <p class="sec-label reveal">03 · For Whom</p>
+  <h2 class="sec-title-en reveal reveal-delay-1">Who needs<br>Plug:ON.</h2>
+  <p class="sec-title-kr reveal reveal-delay-2">Plug:ON이 함께하는 사람들</p>
+
+  <div class="audience-grid">
+    <div class="audience-card reveal reveal-delay-1">
+      <span class="audience-card-tag">For 교육 담당자</span>
+      <h3 class="audience-card-title">효과가 측정되는<br>AI 교육을 원하는 담당자</h3>
+      <p class="audience-card-sub">1회성 교육이 아닌, 현업에서 실제로 쓰이는 교육을 찾고 계신다면</p>
+      <ul class="audience-list">
+        <li>기업 내 AI 도입을 추진하고 있지만, 임직원의 실제 활용률이 낮아 고민이신 분</li>
+        <li>이론 중심 강의가 아닌, 실무 적용 가능한 커리큘럼이 필요하신 분</li>
+        <li>부서별·직군별 맞춤형 AI 교육 설계가 필요하신 분</li>
+        <li>교육 후 현장 변화까지 함께 설계하고 싶으신 분</li>
+      </ul>
+    </div>
+    <div class="audience-card reveal reveal-delay-2">
+      <span class="audience-card-tag">For 수강생</span>
+      <h3 class="audience-card-title">AI를 배웠는데<br>아직 쓰지 못하는 직장인</h3>
+      <p class="audience-card-sub">계정은 있는데 막막한 분, 배웠는데 혼자선 모르겠는 분</p>
+      <ul class="audience-list">
+        <li>ChatGPT·Claude·Gemini를 써보긴 했지만 제대로 활용하지 못하는 분</li>
+        <li>내 업무에 AI를 어떻게 접목해야 할지 감이 없는 분</li>
+        <li>프롬프트를 어떻게 써야 하는지 막막한 분</li>
+        <li>퇴근 전에 바로 써먹을 수 있는 실전 기술이 필요한 분</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION 5 · CURRICULUM PREVIEW ── -->
+<section class="curriculum">
+  <p class="sec-label reveal">04 · Curriculum</p>
+  <h2 class="sec-title-en reveal reveal-delay-1">What we<br>actually teach.</h2>
+  <p class="sec-title-kr reveal reveal-delay-2">Plug:ON 커리큘럼 구성 예시</p>
+
+  <div class="curriculum-intro reveal reveal-delay-2">
+    <p>모든 커리큘럼은 수강 대상과 업무 맥락에 맞춰 커스터마이징됩니다. 아래는 대표적인 구성 예시입니다.</p>
+  </div>
+
+  <div class="module-list">
+    <div class="module-row reveal reveal-delay-1">
+      <p class="module-num">01</p>
+      <div class="module-info">
+        <p class="module-title">AI 도구 이해 — ChatGPT·Claude·Gemini 차이와 선택 기준</p>
+        <p class="module-sub">같은 질문, 다른 답변 — 도구별 특성과 업무 유형별 최적 매칭</p>
+      </div>
+      <span class="module-tag theory">이론 + 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-1">
+      <p class="module-num">02</p>
+      <div class="module-info">
+        <p class="module-title">프롬프트 설계 — 왜 이렇게 써야 하는가</p>
+        <p class="module-sub">역할·맥락·형식·제약 조건 — 좋은 프롬프트의 구조와 원리</p>
+      </div>
+      <span class="module-tag theory">이론 + 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-2">
+      <p class="module-num">03</p>
+      <div class="module-info">
+        <p class="module-title">문서 자동화 실습 — 보고서·이메일·기획안을 AI로</p>
+        <p class="module-sub">내 업무 문서를 직접 가져와 AI와 함께 완성하는 핸즈온 실습</p>
+      </div>
+      <span class="module-tag practice">핸즈온 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-2">
+      <p class="module-num">04</p>
+      <div class="module-info">
+        <p class="module-title">AI 리서치 워크플로우 — 정보 수집부터 인사이트 도출까지</p>
+        <p class="module-sub">시장 분석·경쟁사 조사·트렌드 리포트를 AI로 구조화하는 방법</p>
+      </div>
+      <span class="module-tag practice">핸즈온 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-3">
+      <p class="module-num">05</p>
+      <div class="module-info">
+        <p class="module-title">나만의 AI 워크플로우 설계 — 지속 가능한 활용 습관 만들기</p>
+        <p class="module-sub">강의 이후에도 혼자 실행할 수 있는 개인 맞춤 AI 루틴 완성</p>
+      </div>
+      <span class="module-tag practice">핸즈온 실습</span>
+    </div>
+  </div>
+
+  <p class="curriculum-note reveal">
+    * 커리큘럼은 기업 업종·직군·수강 인원에 따라 커스터마이징됩니다.<br>
+    * 단기 특강(3시간)부터 장기 심화 과정(7시간 이상)까지 설계 가능합니다.
+  </p>
+</section>
+
+<!-- ── SECTION 6 · CLOSING ── -->
+<section class="closing">
+  <div class="closing-glow"></div>
+  <p class="closing-label reveal">Plug:ON · 지금 연결하세요</p>
+  <h2 class="closing-title reveal reveal-delay-1">
+    플러그를 꽂는 순간,<br>
+    <em>AI가 실무가 됩니다.</em>
+  </h2>
+  <p class="closing-sub reveal reveal-delay-2">
+    Plug:ON은 교육의 완성을 강의실 밖에서 찾습니다.<br>
+    수강생이 혼자 실행할 수 있을 때, 비로소 교육이 완료됩니다.
+  </p>
+  <p class="closing-slogan reveal reveal-delay-3"><span>Plug in.</span> Power on.</p>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <p class="footer-logo">Plug<span>:</span>ON</p>
+  <div class="footer-meta">
+    AI Literacy Instructor · 공지연 Gong Ji-yeon<br>
+    Brand Introduction v1.0
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
