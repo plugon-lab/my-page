@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Plug:ON — 브랜드 소개서</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/subsets/Paperlogy-dynamic-subset.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
     min-height: 100vh;
     display: grid;
     grid-template-rows: 1fr auto;
-    padding: 0 max(72px, calc((100% - 1200px) / 2));
+    padding: 0 72px;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--border);
@@ -92,8 +92,8 @@
 
   .hero-eyebrow {
     font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.18em;
+    font-size: 11px;
+    letter-spacing: 0.22em;
     color: var(--green);
     text-transform: uppercase;
     margin-bottom: 44px;
@@ -142,23 +142,43 @@
   }
   .hero-slogan-en span { color: var(--green); }
 
+  .hero-bottom {
+    padding: 36px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border);
+  }
+  .hero-bottom-name {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+  }
+  .hero-bottom-tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
 
   /* ─────────────────────────────────────
      SECTION 2 · THE PROBLEM
   ───────────────────────────────────── */
   .problem {
-    padding: 120px max(72px, calc((100% - 1200px) / 2));
+    padding: 120px 72px;
     border-bottom: 1px solid var(--border);
   }
 
   .sec-label {
     font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.14em;
+    font-size: 10px;
+    letter-spacing: 0.24em;
     color: var(--green);
     text-transform: uppercase;
     margin-bottom: 20px;
-    opacity: 0.8;
+    opacity: 0.65;
   }
 
   .sec-title-en {
@@ -167,7 +187,7 @@
     font-weight: 700;
     letter-spacing: -0.03em;
     color: var(--white);
-    line-height: 1.25;
+    line-height: 1.1;
     margin-bottom: 8px;
   }
 
@@ -197,7 +217,7 @@
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 3px;
-    background: var(--green);
+    background: var(--red-soft);
     opacity: 0.4;
   }
 
@@ -205,7 +225,7 @@
     font-family: var(--font-mono);
     font-size: 36px;
     font-weight: 500;
-    color: var(--green);
+    color: var(--red-soft);
     opacity: 0.25;
     line-height: 1;
     margin-bottom: 20px;
@@ -221,21 +241,58 @@
   }
 
   .problem-desc {
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--soft);
     line-height: 1.85;
     word-break: keep-all;
   }
 
+  .problem-arrow {
+    text-align: center;
+    padding: 64px 0 0;
+  }
+  .problem-arrow-line {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .problem-arrow-text {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--green);
+    text-transform: uppercase;
+  }
+  .problem-arrow-icon {
+    width: 1px;
+    height: 48px;
+    background: linear-gradient(to bottom, var(--green), transparent);
+  }
 
   /* ─────────────────────────────────────
      SECTION 3 · WHAT PLUG:ON DOES
   ───────────────────────────────────── */
   .solution {
-    padding: 120px max(72px, calc((100% - 1200px) / 2));
+    padding: 120px 72px;
     border-bottom: 1px solid var(--border);
   }
 
+  .solution-intro {
+    max-width: 680px;
+    margin-bottom: 72px;
+  }
+
+  .solution-intro p {
+    font-size: 17px;
+    color: var(--soft);
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+  .solution-intro p strong {
+    color: var(--white);
+    font-weight: 600;
+  }
 
   .three-steps {
     display: grid;
@@ -262,12 +319,12 @@
 
   .step-index {
     font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.14em;
+    font-size: 10px;
+    letter-spacing: 0.2em;
     color: var(--green);
     text-transform: uppercase;
     margin-bottom: 24px;
-    opacity: 0.75;
+    opacity: 0.6;
   }
 
   .step-kr {
@@ -280,17 +337,17 @@
 
   .step-en {
     font-family: var(--font-en);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--green);
-    letter-spacing: 0.12em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     margin-bottom: 20px;
-    opacity: 0.8;
+    opacity: 0.7;
   }
 
   .step-desc {
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--soft);
     line-height: 1.85;
     word-break: keep-all;
@@ -314,12 +371,12 @@
   }
   .promise-label {
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
+    font-size: 9px;
+    letter-spacing: 0.22em;
     color: var(--green);
     text-transform: uppercase;
     margin-bottom: 20px;
-    opacity: 0.85;
+    opacity: 0.7;
   }
   .promise-text {
     font-family: var(--font-kr);
@@ -339,7 +396,7 @@
      SECTION 4 · FOR WHOM
   ───────────────────────────────────── */
   .audience {
-    padding: 120px max(72px, calc((100% - 1200px) / 2));
+    padding: 120px 72px;
     border-bottom: 1px solid var(--border);
   }
 
@@ -358,15 +415,15 @@
   .audience-card-tag {
     display: inline-block;
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.12em;
+    font-size: 9px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     border: 1px solid var(--green-mid);
     color: var(--green);
     padding: 4px 10px;
     border-radius: 2px;
     margin-bottom: 28px;
-    opacity: 0.9;
+    opacity: 0.8;
   }
 
   .audience-card-title {
@@ -380,11 +437,11 @@
 
   .audience-card-sub {
     font-family: var(--font-kr);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--green);
     margin-bottom: 28px;
     font-weight: 400;
-    opacity: 0.85;
+    opacity: 0.8;
     word-break: keep-all;
   }
 
@@ -395,7 +452,7 @@
     gap: 12px;
   }
   .audience-list li {
-    font-size: 14px;
+    font-size: 13.5px;
     color: var(--soft);
     padding-left: 18px;
     position: relative;
@@ -413,10 +470,98 @@
   }
 
   /* ─────────────────────────────────────
+     SECTION 5 · CURRICULUM PREVIEW
+  ───────────────────────────────────── */
+  .curriculum {
+    padding: 120px 72px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .curriculum-intro {
+    max-width: 600px;
+    margin-bottom: 72px;
+  }
+  .curriculum-intro p {
+    font-size: 15px;
+    color: var(--soft);
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+
+  .module-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .module-row {
+    background: var(--surface);
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: center;
+    gap: 32px;
+    transition: background 0.2s;
+  }
+  .module-row:hover { background: var(--surface2); }
+
+  .module-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--green);
+    opacity: 0.5;
+    letter-spacing: 0.08em;
+  }
+
+  .module-info {}
+  .module-title {
+    font-family: var(--font-kr);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 4px;
+    word-break: keep-all;
+  }
+  .module-sub {
+    font-size: 12.5px;
+    color: var(--muted);
+    word-break: keep-all;
+  }
+
+  .module-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .module-tag.theory {
+    background: rgba(77,255,160,0.08);
+    color: var(--green);
+    border: 1px solid rgba(77,255,160,0.2);
+  }
+  .module-tag.practice {
+    background: rgba(255,255,255,0.04);
+    color: var(--soft);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .curriculum-note {
+    margin-top: 40px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+    line-height: 1.8;
+  }
+
+  /* ─────────────────────────────────────
      SECTION 6 · CLOSING CTA
   ───────────────────────────────────── */
   .closing {
-    padding: 140px max(72px, calc((100% - 1200px) / 2)) 120px;
+    padding: 140px 72px 120px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -425,7 +570,7 @@
     position: absolute;
     width: 700px; height: 400px;
     border-radius: 50%;
-    background: radial-gradient(ellipse, rgba(77,255,160,0.10) 0%, transparent 65%);
+    background: radial-gradient(ellipse, rgba(77,255,160,0.06) 0%, transparent 70%);
     top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -433,12 +578,12 @@
 
   .closing-label {
     font-family: var(--font-mono);
-    font-size: 14px;
-    letter-spacing: 0.14em;
+    font-size: 10px;
+    letter-spacing: 0.24em;
     color: var(--green);
     text-transform: uppercase;
     margin-bottom: 36px;
-    opacity: 0.8;
+    opacity: 0.65;
   }
 
   .closing-title {
@@ -446,7 +591,7 @@
     font-size: clamp(28px, 4vw, 52px);
     font-weight: 700;
     color: var(--white);
-    line-height: 1.45;
+    line-height: 1.4;
     margin-bottom: 28px;
     word-break: keep-all;
     position: relative;
@@ -481,7 +626,7 @@
      FOOTER
   ───────────────────────────────────── */
   .footer {
-    padding: 40px max(72px, calc((100% - 1200px) / 2));
+    padding: 40px 72px;
     border-top: 1px solid var(--border);
     display: flex;
     justify-content: space-between;
@@ -497,102 +642,12 @@
   .footer-logo span { color: var(--green); }
   .footer-meta {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 10px;
     color: var(--muted);
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-align: right;
     line-height: 1.8;
   }
-
-  /* ─────────────────────────────────────
-     MOBILE · ≤ 768px
-  ───────────────────────────────────── */
-  @media (max-width: 768px) {
-
-    .hero {
-      padding: 0 max(24px, env(safe-area-inset-left));
-      padding-right: max(24px, env(safe-area-inset-right));
-    }
-    .hero-inner {
-      padding-top: max(80px, calc(60px + env(safe-area-inset-top)));
-      max-width: 100%;
-    }
-
-    .problem,
-    .solution,
-    .audience {
-      padding: 80px max(24px, env(safe-area-inset-left));
-      padding-right: max(24px, env(safe-area-inset-right));
-    }
-
-    .closing {
-      padding: 100px max(24px, env(safe-area-inset-left)) 80px;
-      padding-right: max(24px, env(safe-area-inset-right));
-    }
-
-    .footer {
-      padding: 36px max(24px, env(safe-area-inset-left));
-      padding-right: max(24px, env(safe-area-inset-right));
-      padding-bottom: max(36px, calc(20px + env(safe-area-inset-bottom)));
-      flex-direction: column;
-      gap: 12px;
-      text-align: center;
-    }
-    .footer-meta {
-      text-align: center;
-    }
-
-    .problem-grid,
-    .three-steps {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .audience-grid {
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    .promise-block {
-      padding: 40px 28px;
-    }
-
-    .sec-title-kr {
-      margin-bottom: 40px;
-    }
-
-    .closing-glow {
-      width: 320px;
-      height: 240px;
-    }
-  }
-
-  /* ─────────────────────────────────────
-     TABLET · ≤ 1024px
-  ───────────────────────────────────── */
-  @media (max-width: 1024px) and (min-width: 769px) {
-
-    .problem-grid,
-    .three-steps {
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .problem,
-    .solution,
-    .audience {
-      padding: 100px 48px;
-    }
-
-    .closing {
-      padding: 120px 48px 100px;
-    }
-
-    .footer {
-      padding: 36px 48px;
-    }
-  }
-
 </style>
 </head>
 <body>
@@ -614,6 +669,10 @@
     <p class="hero-slogan-en reveal reveal-delay-3"><span>Plug in.</span> Power on.</p>
   </div>
 
+  <div class="hero-bottom">
+    <p class="hero-bottom-name">공지연 · Gong Ji-yeon · AI Literacy Instructor</p>
+    <p class="hero-bottom-tag">plugon.kr</p>
+  </div>
 </section>
 
 <!-- ── SECTION 2 · THE PROBLEM ── -->
@@ -640,6 +699,12 @@
     </div>
   </div>
 
+  <div class="problem-arrow reveal">
+    <div class="problem-arrow-line">
+      <p class="problem-arrow-text">Plug:ON의 답</p>
+      <div class="problem-arrow-icon"></div>
+    </div>
+  </div>
 </section>
 
 <!-- ── SECTION 3 · SOLUTION ── -->
@@ -647,6 +712,10 @@
   <p class="sec-label reveal">02 · Our Answer</p>
   <h2 class="sec-title-en reveal reveal-delay-1">Connect.<br>Don't just teach.</h2>
   <p class="sec-title-kr reveal reveal-delay-2">가르치는 것이 아닌, 연결하는 것</p>
+
+  <div class="solution-intro reveal reveal-delay-2">
+    <p>Plug:ON은 AI 도구와 실무 사이의 <strong>단절을 연결</strong>합니다. 단순히 기능을 설명하는 것이 아니라, 수강생 각자의 업무 맥락에 AI를 꽂아 실제로 작동시키는 경험을 설계합니다. 강의가 끝난 후에도 혼자 실행할 수 있는 힘을 남기는 것, 그것이 Plug:ON의 방식입니다.</p>
+  </div>
 
   <div class="three-steps">
     <div class="step-card reveal reveal-delay-1">
@@ -711,7 +780,66 @@
   </div>
 </section>
 
-<!-- ── SECTION 5 · CLOSING ── -->
+<!-- ── SECTION 5 · CURRICULUM PREVIEW ── -->
+<section class="curriculum">
+  <p class="sec-label reveal">04 · Curriculum</p>
+  <h2 class="sec-title-en reveal reveal-delay-1">What we<br>actually teach.</h2>
+  <p class="sec-title-kr reveal reveal-delay-2">Plug:ON 커리큘럼 구성 예시</p>
+
+  <div class="curriculum-intro reveal reveal-delay-2">
+    <p>모든 커리큘럼은 수강 대상과 업무 맥락에 맞춰 커스터마이징됩니다. 아래는 대표적인 구성 예시입니다.</p>
+  </div>
+
+  <div class="module-list">
+    <div class="module-row reveal reveal-delay-1">
+      <p class="module-num">01</p>
+      <div class="module-info">
+        <p class="module-title">AI 도구 이해 — ChatGPT·Claude·Gemini 차이와 선택 기준</p>
+        <p class="module-sub">같은 질문, 다른 답변 — 도구별 특성과 업무 유형별 최적 매칭</p>
+      </div>
+      <span class="module-tag theory">이론 + 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-1">
+      <p class="module-num">02</p>
+      <div class="module-info">
+        <p class="module-title">프롬프트 설계 — 왜 이렇게 써야 하는가</p>
+        <p class="module-sub">역할·맥락·형식·제약 조건 — 좋은 프롬프트의 구조와 원리</p>
+      </div>
+      <span class="module-tag theory">이론 + 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-2">
+      <p class="module-num">03</p>
+      <div class="module-info">
+        <p class="module-title">문서 자동화 실습 — 보고서·이메일·기획안을 AI로</p>
+        <p class="module-sub">내 업무 문서를 직접 가져와 AI와 함께 완성하는 핸즈온 실습</p>
+      </div>
+      <span class="module-tag practice">핸즈온 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-2">
+      <p class="module-num">04</p>
+      <div class="module-info">
+        <p class="module-title">AI 리서치 워크플로우 — 정보 수집부터 인사이트 도출까지</p>
+        <p class="module-sub">시장 분석·경쟁사 조사·트렌드 리포트를 AI로 구조화하는 방법</p>
+      </div>
+      <span class="module-tag practice">핸즈온 실습</span>
+    </div>
+    <div class="module-row reveal reveal-delay-3">
+      <p class="module-num">05</p>
+      <div class="module-info">
+        <p class="module-title">나만의 AI 워크플로우 설계 — 지속 가능한 활용 습관 만들기</p>
+        <p class="module-sub">강의 이후에도 혼자 실행할 수 있는 개인 맞춤 AI 루틴 완성</p>
+      </div>
+      <span class="module-tag practice">핸즈온 실습</span>
+    </div>
+  </div>
+
+  <p class="curriculum-note reveal">
+    * 커리큘럼은 기업 업종·직군·수강 인원에 따라 커스터마이징됩니다.<br>
+    * 단기 특강(3시간)부터 장기 심화 과정(7시간 이상)까지 설계 가능합니다.
+  </p>
+</section>
+
+<!-- ── SECTION 6 · CLOSING ── -->
 <section class="closing">
   <div class="closing-glow"></div>
   <p class="closing-label reveal">Plug:ON · 지금 연결하세요</p>
@@ -730,7 +858,8 @@
 <footer class="footer">
   <p class="footer-logo">Plug<span>:</span>ON</p>
   <div class="footer-meta">
-    AI Literacy Instructor · 공지연 Gong Ji-yeon
+    AI Literacy Instructor · 공지연 Gong Ji-yeon<br>
+    Brand Introduction v1.0
   </div>
 </footer>
 
